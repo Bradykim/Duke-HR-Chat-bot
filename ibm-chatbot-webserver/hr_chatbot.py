@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -6,10 +6,6 @@ app = Flask(__name__)
 def my_template():
 	return render_template("my_template.html")
 
-@app.before_request
-def start_timer():
-    g.start = time.time()
-
 f = open("log.txt", "w")
-f.write(start_timer() + "   ")
+f.write(request.timestamp + "   ")
 f.close()
