@@ -9,7 +9,7 @@ def my_template():
 
 @app.before_request
 def before_request():
-    return time.time()
+    return str(time.time())
 
 f = open("log.txt", "w")
 f.write(str(before_request()) + "   ")
