@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def my_template():
     ts = time.gmtime()
-    data = request.get_json
+    data = request.get_data()
     f = open("log.txt", "a")
     f.write(time.strftime("%Y-%m-%d %H:%M:%S", ts) + "\t" + str(data) + "\n")
     f.close()
