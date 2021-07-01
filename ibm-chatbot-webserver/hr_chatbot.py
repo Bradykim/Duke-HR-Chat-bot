@@ -7,6 +7,8 @@ app = Flask(__name__)
 def my_template():
 	return render_template("my_template.html")
 
+ts = time.gmtime()
+
 f = open("log.txt", "w")
-f.write(time.ctime(time.time) + "   ")
+f.write(time.strftime("%Y-%m-%d %H:%M:%S", ts) + "   ")
 f.close()
