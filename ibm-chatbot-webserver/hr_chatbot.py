@@ -10,5 +10,5 @@ def my_template():
 ts = time.gmtime()
 
 f = open("log.txt", "a")
-f.write(time.strftime("%Y-%m-%d %H:%M:%S", ts) + "   " + "\n")
+f.write(time.strftime("%Y-%m-%d %H:%M:%S", ts) + "   " + request + "\n")
 f.close()
