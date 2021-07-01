@@ -12,5 +12,5 @@ def before_request():
     return time.time()
 
 f = open("log.txt", "w")
-f.write(before_request() + "   ")
+f.write(str(before_request()) + "   ")
 f.close()
