@@ -9,6 +9,6 @@ def my_template():
 
 ts = time.gmtime()
 
-f = open("log.txt", "w")
-f.write(time.strftime("%Y-%m-%d %H:%M:%S", ts) + "   ")
+f = open("log.txt", "a")
+f.write(time.strftime("%Y-%m-%d %H:%M:%S", ts) + "   " + "\n")
 f.close()
