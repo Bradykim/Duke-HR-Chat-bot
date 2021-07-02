@@ -3,6 +3,12 @@ import time
 import json
 app = Flask(__name__)
 
+@app.route('/foo', methods=['POST']) 
+def foo():
+    data = request.json
+    return jsonify(data)
+
+
 
 @app.route("/")
 def my_template():
