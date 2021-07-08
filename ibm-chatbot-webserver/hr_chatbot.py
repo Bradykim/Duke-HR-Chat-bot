@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def my_template():
     ts = time.gmtime()
-    data = request.get_json()
+    data = request.get_json(force=False)
     #str_data = json.dumps(request)
     f = open("log.txt", "a")
     print(data)
