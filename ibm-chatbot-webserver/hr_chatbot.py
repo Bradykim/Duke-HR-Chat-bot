@@ -11,6 +11,6 @@ def my_template():
     str_data = json.dumps(data)
     f = open("log.txt", "a")
     print(data)
-    f.write(time.strftime("%Y-%m-%d %H:%M:%S", ts) + request.remote_addr + " \t" + str_data + "\n")
+    f.write(time.strftime("%Y-%m-%d %H:%M:%S", ts) + " " + request.remote_addr + " \t" + str_data + "\n")
     f.close()
     return render_template("my_template.html")
