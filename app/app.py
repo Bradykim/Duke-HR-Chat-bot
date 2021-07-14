@@ -28,36 +28,35 @@ def index():
 def respond():
     
     #Example JSON object for IBM bot
-    example_dict = {"message" : "Hello, world!"}
-    return json.dumps(example_dict)
+    #example_dict = {"message" : "Hello, world!"}
+    #return json.dumps(example_dict)
 
-    # Timestamp (Jacqueline & Mitchell)
-    """time = datetime.datetime.now()
-    #print(time, file=sys.stderr)"""
 
-    details = request.json
+    #parsing JSON object and saving values as variables 
+    details = request.get_json()
     question = details["question"]
     intent = details["intent"]
     print(question, file=sys.stderr)
     print(intent, file=sys.stderr)
 
     #insert data as a row in questions table 
-    insert_table(question, intent) 
+    insert_statement = "INSERT INTO questions (question, intent) VALUES (%s, %s)"
+    example_values = (question, intent) 
+    connection = create_server_connection("db", "root", "registrar", "sample_qna") # Connect to the Database
+    execute_query_insert(connection, insert_statement, example_values) # Execute our defined query
 
-
-    #read data from table 
+    #READ data from table 
     #q1 = """
     #SELECT *
     #FROM questions;
     #"""
-    """
-    connection = create_server_connection("db", "root", "registrar", "sample_qna")
+    """ connection = create_server_connection("db", "root", "registrar", "sample_qna")
     results = read_query(connection, q1)
     for result in results:
-        print(result, file=sys.stderr)
-    """
+        print(result, file=sys.stderr) """
     
-    #Update a record 
+    
+    #UPDATE a record 
     #Ex: changing intent for a specific question 
     #update = """
     #UPDATE questions 
@@ -67,16 +66,17 @@ def respond():
     ##WHERE uniquely identifies which record/records to update 
     #connection = create_server_connection("db", "root", "registrar", "sample_qna")
     #execute_query(connection, update)
-
-    #Delete a record 
+    
+    #DELETE a record 
+    #deletes all instances of the question in the table 
     #delete_question = """
     #DELETE FROM questions 
-    #WHERE question = 'a question';
+    #WHERE question = 'bar';
     #"""
     #connection = create_server_connection("db", "root", "registrar", "sample_qna")
     #execute_query(connection, delete_question)
     
-    #return Response(status=200)
+    return Response(status=200)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0') #, ssl_context=('/home/vcm/registrar-chatbot/server.crt', '/home/vcm/registrar-chatbot/server.key'))
