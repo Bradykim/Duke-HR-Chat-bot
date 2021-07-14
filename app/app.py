@@ -42,7 +42,7 @@ def respond():
     #insert data as a row in questions table 
     insert_statement = "INSERT INTO questions (question, intent) VALUES (%s, %s)"
     example_values = (question, intent) 
-    connection = create_server_connection("db", "root", "registrar", "sample_qna") # Connect to the Database
+    connection = create_server_connection("db", "root", "HR", "sample_qna") # Connect to the Database
     execute_query_insert(connection, insert_statement, example_values) # Execute our defined query
 
     #READ data from table 
@@ -50,7 +50,7 @@ def respond():
     #SELECT *
     #FROM questions;
     #"""
-    """ connection = create_server_connection("db", "root", "registrar", "sample_qna")
+    """ connection = create_server_connection("db", "root", "HR", "sample_qna")
     results = read_query(connection, q1)
     for result in results:
         print(result, file=sys.stderr) """
@@ -64,7 +64,7 @@ def respond():
     #WHERE question = 'How do I request a trancript?';
     #"""
     ##WHERE uniquely identifies which record/records to update 
-    #connection = create_server_connection("db", "root", "registrar", "sample_qna")
+    #connection = create_server_connection("db", "root", "HR", "sample_qna")
     #execute_query(connection, update)
     
     #DELETE a record 
@@ -73,7 +73,7 @@ def respond():
     #DELETE FROM questions 
     #WHERE question = 'bar';
     #"""
-    #connection = create_server_connection("db", "root", "registrar", "sample_qna")
+    #connection = create_server_connection("db", "root", "HR", "sample_qna")
     #execute_query(connection, delete_question)
     
     return Response(status=200)
