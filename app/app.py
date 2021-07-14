@@ -1,4 +1,4 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response, render_template
 from typing import List, Dict
 import mysql.connector
 from mysql.connector import Error
