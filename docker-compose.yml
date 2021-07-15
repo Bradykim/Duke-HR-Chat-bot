@@ -5,7 +5,7 @@ services:
     ports:
       - "6033:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: HR 
+      MYSQL_ROOT_PASSWORD: 6yD9MfDskds2jgTk 
     volumes:
       - ./db_setup:/tmp/stuff/:ro
       - ./data/db:/var/lib/mysql

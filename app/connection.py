@@ -39,7 +39,7 @@ def execute_query_insert(connection, query, data):
 def insert_table(question, intent):
     statement = "INSERT INTO questions (question, intent) VALUES (%s, %s)"
     data = (question, intent) 
-    connection = create_server_connection("db", "root", "HR", "sample_qna")
+    connection = create_server_connection("db", "root", "6yD9MfDskds2jgTk", "sample_qna")
     execute_query_insert(connection, statement, data)
 
 #reading data from database without making changes 
