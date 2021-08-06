@@ -14,3 +14,6 @@ is to have a 24/7 online chatbot that can answer user's human resources-related 
 
 ## How to Access
 Go to the [test website](https://chatbot-test-01.oit.duke.edu/ "Named link title"), and click the icon in the lower right corner to start talking to the chatbot.
+
+## Infrastructure
+![Infrastructure Slide](/Users/emilyhughes/Downloads/Slide1.jpeg)
