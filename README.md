@@ -40,7 +40,7 @@ Go to the [test website](https://chatbot-test-01.oit.duke.edu/ "Named link title
 
 We tried two approaches to extract conversation data:
 
-1. Using a **post-message **webhook under Assistant settings, you can obtain the detected intent, the confidence associated with detection, and the chatbot's response. With this method, you obtain a JSON object that only contains the aforementioned data, without the user's question.
+1. Using a **post-message** webhook under Assistant settings, you can obtain the detected intent, the confidence associated with detection, and the chatbot's response. With this method, you obtain a JSON object that only contains the aforementioned data, without the user's question.
 2. Enabling a webhook on **each dialog node** and passing in the user's input as a parameter, you obtain a JSON object with only the user's question. However, you have to manually toggle this setting for every node in the chatbot's dialog, and it can cause formatting issues with newline characters and multi-turn logic.
 
 In the end, we stuck with the second approach, because the user's question is the most important piece of information. You could obtain the additional information (intent, confidence, and answer) by making a call to the Watson Assistant API and parsing the returned JSON object. This documentation might serve as a good starting point: https://cloud.ibm.com/apidocs/assistant/assistant-v2#message.
